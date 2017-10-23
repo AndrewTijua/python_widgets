@@ -38,6 +38,7 @@ def extractNotIndices(extract_list, element):
             indices.append(i)  
     return indices
 
+
 def extractFromIndices(listToExtract, indices):
     extracted = []
     for i in indices:
@@ -52,3 +53,10 @@ def createPopulation(listOfLists, indices):
         for j in indices:
             listReturn[i].append(listOfLists[i][j])
     return listReturn
+
+def extractCompare(extract_list, operator, element):
+    indices = []
+    for i in range(len(extract_list)):
+        if operator(extract_list[i], element):
+            indices.append(i)
+    return indices
